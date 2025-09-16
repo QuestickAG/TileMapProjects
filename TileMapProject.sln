@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapEngine", "TileMapEngine\TileMapEngine.csproj", "{9FF00E74-5657-4FD1-A881-803F0C884A14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapProjectTests", "TileMapProjectTests\TileMapProjectTests.csproj", "{216BBA5F-3D7D-4AF4-A382-C0F8E1499064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{9FF00E74-5657-4FD1-A881-803F0C884A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FF00E74-5657-4FD1-A881-803F0C884A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FF00E74-5657-4FD1-A881-803F0C884A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216BBA5F-3D7D-4AF4-A382-C0F8E1499064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216BBA5F-3D7D-4AF4-A382-C0F8E1499064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216BBA5F-3D7D-4AF4-A382-C0F8E1499064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216BBA5F-3D7D-4AF4-A382-C0F8E1499064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
