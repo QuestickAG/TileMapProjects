@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Drawing;
 using TileMapEngine.Enums;
 using TileMapEngine.Models;
 
@@ -54,6 +55,37 @@ public class Tests
         Assert.AreEqual(SurfaceType.Plain, layer.GetTile(2, 2));
         Assert.AreEqual(3, layer.Width);
         Assert.AreEqual(3, layer.Height);
+    }
+    
+    [Test]
+    public void FillRegion_UpdatesCorrectArea()
+    {
+        var rect = new Rectangle(10, 10, 20, 20);
+        _layer.FillRegion(rect, SurfaceType.Mountain);
+
+        for (int y = 10; y < 20; y++)
+        {
+            for (int x = 10; x < 20; x++)
+            {
+                Assert.AreEqual(SurfaceType.Mountain, _layer.GetTile(x, y));
+            }
+        }
+
+        Assert.AreEqual(SurfaceType.Plain, _layer.GetTile(9, 10));
+        Assert.AreEqual(SurfaceType.Plain, _layer.GetTile(20, 20));
+    }
+    
+    [Test]
+    public void CanPlaceObjectInArea_ReturnsCorrectResults()
+    {
+        var area1 = new Rectangle(0, 0, 10, 10);
+        Assert.IsTrue(_layer.CanPlaceObjectInArea(area1));
+
+        _layer.SetTile(5, 5, SurfaceType.Mountain);
+        Assert.IsFalse(_layer.CanPlaceObjectInArea(area1));
+
+        var singleTile = new Rectangle(5, 5, 6, 6);
+        Assert.IsFalse(_layer.CanPlaceObjectInArea(singleTile));
     }
     
     [Test]
